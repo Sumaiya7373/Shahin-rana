@@ -156,7 +156,7 @@ const channelInfo = {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
+            newsletterName: '𝗦𝗵𝗮𝗵𝗶𝗻 𝗥𝗮𝗻𝗮',
             serverMessageId: -1
         }
     }
