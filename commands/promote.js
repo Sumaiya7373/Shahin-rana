@@ -78,7 +78,7 @@ async function handlePromotionEvent(sock, groupId, participants, author) {
             promotedBy = 'System';
         }
 
-        const promotionMessage = `*『 GROUP PROMOTION 』*\n\n` +
+        const promotionMessage = `*⎯⃝💠➪‎‎‎🇬‌𝐑𝐎𝐔𝐏 🇵‌𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍➳💗*\n\n` +
             `👥 *Promoted User${participants.length > 1 ? 's' : ''}:*\n` +
             `${promotedUsernames.map(name => `• ${name}`).join('\n')}\n\n` +
             `👑 *Promoted By:* ${promotedBy}\n\n` +
