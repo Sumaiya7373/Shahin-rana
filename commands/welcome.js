@@ -11,8 +11,10 @@ async function welcomeCommand(sock, chatId, message, match) {
     }
 
     // Extract match from message
-    const text = message.message?.conversation || 
-                message.message?.extendedTextMessage?.text || '';
+    const text =
+        message.message?.conversation ||
+        message.message?.extendedTextMessage?.text ||
+        '';
     const matchText = text.split(' ').slice(1).join(' ');
 
     await handleWelcome(sock, chatId, message, matchText);
@@ -34,113 +36,107 @@ async function handleJoinEvent(sock, id, participants) {
     // Send welcome message for each new participant
     for (const participant of participants) {
         try {
-            // Handle case where participant might be an object or not a string
-            const participantString = typeof participant === 'string' ? participant : (participant.id || participant.toString());
+            const participantString =
+                typeof participant === 'string'
+                    ? participant
+                    : participant.id || participant.toString();
+
             const user = participantString.split('@')[0];
-            
+
             // Get user's display name
-            let displayName = user; // Default to phone number
+            let displayName = user;
             try {
                 const contact = await sock.getBusinessProfile(participantString);
                 if (contact && contact.name) {
                     displayName = contact.name;
                 } else {
-                    // Try to get from group participants
                     const groupParticipants = groupMetadata.participants;
-                    const userParticipant = groupParticipants.find(p => p.id === participantString);
+                    const userParticipant = groupParticipants.find(
+                        (p) => p.id === participantString
+                    );
                     if (userParticipant && userParticipant.name) {
                         displayName = userParticipant.name;
                     }
                 }
-            } catch (nameError) {
+            } catch (e) {
                 console.log('Could not fetch display name, using phone number');
             }
-            
-            // Process custom message with variables
+
             let finalMessage;
+
             if (customMessage) {
                 finalMessage = customMessage
                     .replace(/{user}/g, `@${displayName}`)
                     .replace(/{group}/g, groupName)
                     .replace(/{description}/g, groupDesc);
             } else {
-                // Default message if no custom message is set
-                const now = new Date();
-                const timeString = now.toLocaleString('en-US', {
-                    month: '2-digit',
-                    day: '2-digit', 
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: true
-                });
-                
-                finalMessage = `╭╼━≪•𝙽𝙴𝚆 𝙼𝙴𝙼𝙱𝙴𝚁•≫━╾╮\n┃𝚆𝙴𝙻𝙲𝙾𝙼𝙴: @${displayName} 👋\n┃Member count: #${groupMetadata.participants.length}\n┃𝚃𝙸𝙼𝙴: ${timeString}⏰\n╰━━━━━━━━━━━━━━━╯\n\n*@${displayName}* Welcome to *${groupName}*! 🎉\n*Group 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽*\n${groupDesc}\n\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ Knight Bot*`;
+                finalMessage = `
+╔══❀•°•🌸•°•❀══╗
+𝐖𝐄𝐋𝐂𝐎𝐌𝐄 @${displayName} 😎
+╚══❀•°•🌸•°•❀══╝
+𝐆𝐫𝐨𝐮𝐩 𝐧𝐚𝐦𝐞 :
+*${groupName}*
+
+👥 𝐓𝐨𝐭𝐚𝐥 𝐌𝐞𝐦𝐛𝐞𝐫𝐬 :
+${groupMetadata.participants.length} জন 🔥
+
+😜 নতুন মেম্বার আসছে মানেই
+চা ☕ + আড্ডা 🗣️ + হাসি 🤣 বাড়ছে!
+
+_সময় বদলায় কিন্তু কিছু অনুভুতি_
+_যা কখনো বদলায় না_
+
+__আমাদের গ্রুপে এড হওয়ার জন্য ধন্যবাদ__
+__মজা করুন, আড্ডা দেন__ 🌸
+
+╭───❖☆❖───╮
+💖 𝐋𝐨𝐯𝐞 𝐰𝐢𝐭𝐡 𝐒𝐡𝐚𝐡𝐢𝐧 𝐑𝐚𝐧𝐚 💖
+╰───❖☆❖───╯
+`;
             }
-            
-            // Try to send with image first (always try images)
+
+            // Try sending image welcome
             try {
-                // Get user profile picture
-                let profilePicUrl = `https://img.pyrocdn.com/dbKUgahg.png`; // Default avatar
+                let profilePicUrl = 'https://img.pyrocdn.com/dbKUgahg.png';
                 try {
-                    const profilePic = await sock.profilePictureUrl(participantString, 'image');
-                    if (profilePic) {
-                        profilePicUrl = profilePic;
-                    }
-                } catch (profileError) {
-                    console.log('Could not fetch profile picture, using default');
-                }
-                
-                // Construct API URL for welcome image
-                const apiUrl = `https://api.some-random-api.com/welcome/img/2/gaming3?type=join&textcolor=green&username=${encodeURIComponent(displayName)}&guildName=${encodeURIComponent(groupName)}&memberCount=${groupMetadata.participants.length}&avatar=${encodeURIComponent(profilePicUrl)}`;
-                
-                // Fetch the welcome image
+                    const profilePic = await sock.profilePictureUrl(
+                        participantString,
+                        'image'
+                    );
+                    if (profilePic) profilePicUrl = profilePic;
+                } catch {}
+
+                const apiUrl = `https://api.some-random-api.com/welcome/img/2/gaming3?type=join&textcolor=green&username=${encodeURIComponent(
+                    displayName
+                )}&guildName=${encodeURIComponent(
+                    groupName
+                )}&memberCount=${
+                    groupMetadata.participants.length
+                }&avatar=${encodeURIComponent(profilePicUrl)}`;
+
                 const response = await fetch(apiUrl);
                 if (response.ok) {
                     const imageBuffer = await response.buffer();
-                    
-                    // Send welcome image with caption (custom or default message)
                     await sock.sendMessage(id, {
                         image: imageBuffer,
                         caption: finalMessage,
                         mentions: [participantString],
-                        ...channelInfo
+                        ...channelInfo,
                     });
-                    continue; // Skip to next participant
+                    continue;
                 }
-            } catch (imageError) {
-                console.log('Image generation failed, falling back to text');
+            } catch {
+                console.log('Image failed, sending text');
             }
-            
-            // Send text message (either custom message or fallback)
+
+            // Fallback text
             await sock.sendMessage(id, {
                 text: finalMessage,
                 mentions: [participantString],
-                ...channelInfo
+                ...channelInfo,
             });
         } catch (error) {
-            console.error('Error sending welcome message:', error);
-            // Fallback to text message
-            const participantString = typeof participant === 'string' ? participant : (participant.id || participant.toString());
-            const user = participantString.split('@')[0];
-            
-            // Use custom message if available, otherwise use simple fallback
-            let fallbackMessage;
-            if (customMessage) {
-                fallbackMessage = customMessage
-                    .replace(/{user}/g, `@${user}`)
-                    .replace(/{group}/g, groupName)
-                    .replace(/{description}/g, groupDesc);
-            } else {
-                fallbackMessage = `Welcome @${user} to ${groupName}! 🎉`;
-            }
-            
-            await sock.sendMessage(id, {
-                text: fallbackMessage,
-                mentions: [participantString],
-                ...channelInfo
-            });
+            console.error('Welcome error:', error);
         }
     }
 }
