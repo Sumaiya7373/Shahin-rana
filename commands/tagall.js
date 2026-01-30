@@ -18,7 +18,7 @@ async function tagAllCommand(sock, chatId, senderId, message) {
         const emojis = [
             "│🌸 ᩧ𝆺ྀི𝅥","│👑 ᩧ𝆺ྀི𝅥","│🎀 ᩧ𝆺ྀི𝅥",
             "│🦋 ᩧ𝆺ྀི𝅥","│💎 ᩧ𝆺ྀི𝅥","│🎾 ᩧ𝆺ྀི𝅥",
-            "│🎈 ᩧ𝆺ྀི𝅥","│💎 ᩧ𝆺ྀི𝅥","│🎀 ᩧ𝆺ྀི𝅥","│🦋 ᩧ𝆺ྀི𝅥"
+            "│🎈 ᩧ𝆺ྀི𝅥","│🧁 ᩧ𝆺ྀི𝅥","│🍿 ᩧ𝆺ྀི𝅥","│🥳 ᩧ𝆺ྀི𝅥"
         ];
 
         let count = 1;
