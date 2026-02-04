@@ -18,29 +18,25 @@ async function staffCommand(sock, chatId, msg) {
         // Owner of the group
         const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || chatId.split('-')[0] + '@s.whatsapp.net';
 
-        // Build fancy admin list
-        let listAdminText = '';
+        // Emoji array (cycle through for fun)
+        const emojis = ['🪻','👀','🍿','🐋','🧃','🎀','🍓','🎐','🍦','✨'];
+        
+        // Fancy header with dynamic group name
+        const header = `*▢ GROUP : ${groupMetadata.subject}*\n*▢ ADMINS : ${groupAdmins.length}*\n*▢ MESSAGE : ATTENTION ADMINS*`;
+
+        // Build fancy admin list with emojis
+        let listAdminText = '╭┈─「 αℓℓ α∂ɱเɳร 👑 」┈❍\n';
         groupAdmins.forEach((admin, index) => {
-            listAdminText += `╔══❖•ೋ° ⚡ °ೋ•❖══╗\n`;
-            listAdminText += `✨ ${index + 1}. @${admin.id.split('@')[0]}\n`;
-            listAdminText += `╚══❖•ೋ° ⚡ °ೋ•❖══╝\n`;
+            const emoji = emojis[index % emojis.length]; // Cycle emojis
+            listAdminText += `│${emoji} @${admin.id.split('@')[0]}\n`;
         });
 
-        // Compose final text with fancy boxes
-        const text = `
-╔══❖•ೋ° ⚡ °ೋ•❖══╗
-      𝐆𝐑𝐎𝐔𝐏: ${groupMetadata.subject}
-╚══❖•ೋ° ⚡ °ೋ•❖══╝
-╔══❖•ೋ° ⚡ °ೋ•❖══╗
-      𝐀𝐝𝐦𝐢𝐧 (${groupAdmins.length})
-╚══❖•ೋ° ⚡ °ೋ•❖══╝
+        // Add owner at the end with special emoji
+        listAdminText += `│👑 @${owner.split('@')[0]}\n`;
+        listAdminText += '╰────────────❍';
 
-╔══❖•ೋ° ⚡ °ೋ•❖══╗
-  𝐀𝐓𝐓𝐄𝐍𝐓𝐈𝐎𝐍 𝐀𝐋𝐋 𝐀𝐃𝐌𝐈𝐍 💗🥳🍁
-╚══❖•ೋ° ⚡ °ೋ•❖══╝
-
-${listAdminText}
-`.trim();
+        // Compose final text
+        const text = `${header}\n\n${listAdminText}`;
 
         // Send the message with image and mentions
         await sock.sendMessage(chatId, {
