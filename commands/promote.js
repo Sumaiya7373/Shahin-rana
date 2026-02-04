@@ -1,21 +1,17 @@
 const { isAdmin } = require('../lib/isAdmin');
 
-// Function to handle manual promotions via command
+// ================= MANUAL PROMOTE COMMAND =================
 async function promoteCommand(sock, chatId, mentionedJids, message) {
     let userToPromote = [];
-    
-    // Check for mentioned users
+
     if (mentionedJids && mentionedJids.length > 0) {
         userToPromote = mentionedJids;
-    }
-    // Check for replied message
-    else if (message.message?.extendedTextMessage?.contextInfo?.participant) {
+    } else if (message.message?.extendedTextMessage?.contextInfo?.participant) {
         userToPromote = [message.message.extendedTextMessage.contextInfo.participant];
     }
-    
-    // If no user found through either method
+
     if (userToPromote.length === 0) {
-        await sock.sendMessage(chatId, { 
+        await sock.sendMessage(chatId, {
             text: 'Please mention the user or reply to their message to promote!'
         });
         return;
@@ -23,71 +19,115 @@ async function promoteCommand(sock, chatId, mentionedJids, message) {
 
     try {
         await sock.groupParticipantsUpdate(chatId, userToPromote, "promote");
-        
-        // Get usernames for each promoted user
-        const usernames = await Promise.all(userToPromote.map(async jid => {
-            
-            return `@${jid.split('@')[0]}`;
-        }));
 
-        // Get promoter's name (the bot user in this case)
+        const usernames = userToPromote.map(jid => `@${jid.split('@')[0]}`);
         const promoterJid = sock.user.id;
-        
-        const promotionMessage = `*⎯⃝💠➪‎‎‎🇬‌𝐑𝐎𝐔𝐏 🇵‌𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍➳💗*\n\n` +
-            `👥 *Promoted User${userToPromote.length > 1 ? 's' : ''}:*\n` +
-            `${usernames.map(name => `• ${name}`).join('\n')}\n\n` +
-            `👑 *Promoted By:* @${promoterJid.split('@')[0]}\n\n` +
-            `📅 *Date:* ${new Date().toLocaleString()}`;
-        await sock.sendMessage(chatId, { 
-            text: promotionMessage,
-            mentions: [...userToPromote, promoterJid]
+        const adminTag = `@${promoterJid.split('@')[0]}`;
+
+        const groupMeta = await sock.groupMetadata(chatId);
+        const groupName = groupMeta.subject || 'Unknown Group';
+
+        const ownerJid =
+            groupMeta.owner ||
+            groupMeta.participants.find(p => p.admin === 'superadmin')?.id;
+
+        const ownerTag = ownerJid ? `@${ownerJid.split('@')[0]}` : 'Not Found';
+
+        const now = new Date();
+        const date = now.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
         });
+        const time = now.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+
+        const promotionMessage =
+`╭─〔 *🎉 Admin Event* 〕
+├─ ${adminTag} has promoted ${usernames.join(', ')}
+├─ Group: ${groupName}
+├─ 👑 𝐆𝐫𝐨𝐮𝐩 𝐎𝐰𝐧𝐞𝐫 : ${ownerTag}
+│
+├─ ✦ *Promotion Schedule* ✦
+│   ├─ 🗓️ 𝐃𝐚𝐭𝐞 » ${date}
+│   └─ ⌛ 𝐓𝐢𝐦𝐞 » ${time}
+│
+╰─➤ Powered by ~⎯͢⎯⃝🩷➪‎‎‎Shahin Rana♡●➪`;
+
+        await sock.sendMessage(chatId, {
+            text: promotionMessage,
+            mentions: [...userToPromote, promoterJid, ownerJid].filter(Boolean)
+        });
+
     } catch (error) {
         console.error('Error in promote command:', error);
-        await sock.sendMessage(chatId, { text: 'Failed to promote user(s)!'});
+        await sock.sendMessage(chatId, { text: 'Failed to promote user(s)!' });
     }
 }
 
-// Function to handle automatic promotion detection
+// ================= AUTO PROMOTION EVENT =================
 async function handlePromotionEvent(sock, groupId, participants, author) {
     try {
-        // Safety check for participants
-        if (!Array.isArray(participants) || participants.length === 0) {
-            return;
-        }
+        if (!Array.isArray(participants) || participants.length === 0) return;
 
-        // Get usernames for promoted participants
-        const promotedUsernames = await Promise.all(participants.map(async jid => {
-            // Handle case where jid might be an object or not a string
-            const jidString = typeof jid === 'string' ? jid : (jid.id || jid.toString());
-            return `@${jidString.split('@')[0]} `;
-        }));
+        const groupMeta = await sock.groupMetadata(groupId);
+        const groupName = groupMeta.subject || 'Unknown Group';
 
-        let promotedBy;
-        let mentionList = participants.map(jid => {
-            // Ensure all mentions are proper JID strings
-            return typeof jid === 'string' ? jid : (jid.id || jid.toString());
+        const promotedUsers = participants.map(jid => {
+            const jidStr = typeof jid === 'string' ? jid : jid.id;
+            return `@${jidStr.split('@')[0]}`;
         });
 
-        if (author && author.length > 0) {
-            // Ensure author has the correct format
-            const authorJid = typeof author === 'string' ? author : (author.id || author.toString());
-            promotedBy = `@${authorJid.split('@')[0]}`;
-            mentionList.push(authorJid);
-        } else {
-            promotedBy = 'System';
+        let mentionList = participants.map(jid =>
+            typeof jid === 'string' ? jid : jid.id
+        );
+
+        let adminTag = 'System';
+        if (author) {
+            const adminJid = typeof author === 'string' ? author : author.id;
+            adminTag = `@${adminJid.split('@')[0]}`;
+            mentionList.push(adminJid);
         }
 
-        const promotionMessage = `*⎯⃝💠➪‎‎‎🇬‌𝐑𝐎𝐔𝐏 🇵‌𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍➳💗*\n\n` +
-            `👥 *Promoted User${participants.length > 1 ? 's' : ''}:*\n` +
-            `${promotedUsernames.map(name => `• ${name}`).join('\n')}\n\n` +
-            `👑 *Promoted By:* ${promotedBy}\n\n` +
-            `📅 *Date:* ${new Date().toLocaleString()}`;
-        
+        const ownerJid =
+            groupMeta.owner ||
+            groupMeta.participants.find(p => p.admin === 'superadmin')?.id;
+
+        const ownerTag = ownerJid ? `@${ownerJid.split('@')[0]}` : 'Not Found';
+        if (ownerJid) mentionList.push(ownerJid);
+
+        const now = new Date();
+        const date = now.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+        const time = now.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+
+        const promotionMessage =
+`╭─〔 *🎉 Admin Event* 〕
+├─ ${adminTag} has promoted ${promotedUsers.join(', ')}
+├─ Group: ${groupName}
+├─ 👑 𝐆𝐫𝐨𝐮𝐩 𝐎𝐰𝐧𝐞𝐫 : ${ownerTag}
+│
+├─ ✦ *Promotion Schedule* ✦
+│   ├─ 🗓️ 𝐃𝐚𝐭𝐞 » ${date}
+│   └─ ⌛ 𝐓𝐢𝐦𝐞 » ${time}
+│
+╰─➤ Powered by ~⎯͢⎯⃝🩷➪‎‎‎Shahin Rana♡●➪`;
+
         await sock.sendMessage(groupId, {
             text: promotionMessage,
             mentions: mentionList
         });
+
     } catch (error) {
         console.error('Error handling promotion event:', error);
     }
