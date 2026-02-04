@@ -145,68 +145,67 @@ async function helpCommand(sock, chatId, message) {
 ├◈  🔹  .snow <text>
 ├◈  🔹  .impressive <text>
 ├◈  🔹  .matrix <text>
-├◈    .light <text>
-├◈  ❍  .neon <text>
-├◈  ❍  .devil <text>
-├◈  ❍  .purple <text>
-├◈  ❍  .thunder <text>
-├◈  ❍  .leaves <text>
-├◈  ❍  .1917 <text>
-├◈  ❍  .arena <text>
-├◈  ❍  .hacker <text>
-├◈  ❍  .sand <text>
-├◈  ❍  .blackpink <text>
-├◈  ❍  .glitch <text>
-├◈  ❍  .fire <text>
+├◈  🔹 .light <text>
+├◈  🔹  .neon <text>
+├◈  🔹  .devil <text>
+├◈  🔹  .purple <tehttps://chat.whatsapp.com/F5Wnw7pgW576YqhXaXylOW?mode=gi_txt>
+├◈  🔹  .thunder <text>
+├◈  🔹  .leaves <text>
+├◈  🔹  .1917 <text>
+├◈  🔹  .arena <text>
+├◈  🔹  .hacker <text>
+├◈  🔹 .blackpink <text>
+├◈  🔹  .glitch <text>
+├◈  🔹  .fire <text>
 ┕──────────────────❒
 
 ╭────❒ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫:❒
-├◈  ❍ .play <song_name>
-├◈  ❍ .song <song_name>
-├◈  ❍  .spotify <query>
-├◈  ❍ .instagram <link>
-├◈  ❍ .facebook <link>
-├◈  ❍ .tiktok <link>
-├◈  ❍ .video <song name>
-├◈  ❍  . <Link>
+├◈  🔹 .play <song_name>
+├◈  🔹 .song <song_name>
+├◈  🔹  .spotify <query>
+├◈  🔹 .instagram <link>
+├◈  🔹 .facebook <link>
+├◈  🔹 .tiktok <link>
+├◈  🔹 .video <song name>
+├◈  🔹  . <Link>
 ┕──────────────────❒
 
 ╭────❒ 𝐌𝐢𝐬𝐜:❒
-├◈  ❍.heart
-├◈  ❍.horny
-├◈  ❍.circle
-├◈  ❍.lgbt
-├◈  ❍.lolice
-├◈  ❍.its-so-stupid
-├◈  ❍.namecard 
-├◈  ❍.oogway
-├◈  ❍.tweet
-├◈  ❍.ytcomment 
-├◈  ❍.comrade 
-├◈  ❍.gay 
-├◈  ❍.glass 
-├◈  ❍.jail 
-├◈  ❍.passed 
-├◈  ❍ .triggered
+├◈  🔹.heart
+├◈  🔹.horny
+├◈  🔹.circle
+├◈  🔹.lgbt
+├◈  🔹.lolice
+├◈  🔹.its-so-stupid
+├◈  🔹.namecard 
+├◈  🔹.oogway
+├◈  🔹.tweet
+├◈  🔹.ytcomment 
+├◈  🔹.comrade 
+├◈  🔹.gay 
+├◈  🔹.glass 
+├◈  🔹.jail 
+├◈  🔹.passed 
+├◈  🔹 .triggered
 ┕──────────────────❒
 
 ╭────❒ 𝐀𝐧𝐢𝐦𝐞:❒
-├◈  ❍ .nom 
-├◈  ❍ .poke 
-├◈  ❍ .cry 
-├◈  ❍ .kiss 
-├◈  ❍ .pat 
-├◈  ❍ .hug 
-├◈  ❍.wink 
-├◈  ❍ .facepalm 
+├◈  🔹 .nom 
+├◈  🔹 .poke 
+├◈  🔹 .cry 
+├◈  🔹 .kiss 
+├◈  🔹 .pat 
+├◈  🔹 .hug 
+├◈  🔹.wink 
+├◈  🔹 .facepalm 
 ┕──────────────────❒
 
 ╭────❒ 𝐆𝐢𝐭𝐡𝐮𝐛 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍ .git
-├◈  ❍ .github
-├◈  ❍.sc
-├◈  ❍.script
-├◈  ❍ .repo
+├◈  🔹 .git
+├◈  🔹 .github
+├◈  🔹.sc
+├◈  🔹.script
+├◈  🔹 .repo
 ┕──────────────────❒
 
 
