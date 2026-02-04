@@ -10,140 +10,142 @@ async function helpCommand(sock, chatId, message) {
 │  🔹 *~_𝐁𝐘_~* ${settings.botOwner || 'Mr Shahin Rana'}
 │  🔹 *~_𝐘𝐓_~* : *~_👑 𝐗𝐭𝐲𝐥𝐢𝐬𝐡_ღ꙰𝐒𝐡𝐚𝐡𝐢𝐧࿐👑_~*
 ╰─────────────●●►
+
 ❒ 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:▣
+
 ╭────❒ 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍  *help or. Menu*
-├◈  ❍  .ping
-├◈  ❍  .alive
-├◈  ❍  .tts <text>
-├◈  ❍   .owner
-├◈  ❍  .joke
-├◈  ❍  .quote
-├◈  ❍  .fact
-├◈  ❍  .weather <city>
-├◈  ❍   .news
-├◈  ❍  .attp <text>
-├◈  ❍  .lyrics <song_title>
-├◈  ❍ .8ball <question>
-├◈  ❍  .groupinfo
-├◈  ❍  .staff or .admins 
-├◈  ❍  .vv
-├◈  ❍  .trt <text> <lang>
-├◈  ❍  .ss <link>
-├◈  ❍  .jid
-├◈  ❍ .url
+├◈  🔹  *help or. Menu*
+├◈  🔹  .ping
+├◈  🔹  .alive
+├◈  🔹  .tts <text>
+├◈  🔹   .owner
+├◈  🔹  .joke
+├◈  🔹  .quote
+├◈  🔹  .fact
+├◈  🔹  .weather <city>
+├◈  🔹   .news
+├◈  🔹  .attp <text>
+├◈  🔹  .lyrics <song_title>
+├◈  🔹 .8ball <question>
+├◈  🔹  .groupinfo
+├◈  🔹  .staff or .admins 
+├◈  🔹  .vv
+├◈  🔹  .trt <text> <lang>
+├◈  🔹  .ss <link>
+├◈  🔹  .jid
+├◈  🔹 .url
 ┕──────────────────❒
 
 ╭────❒ 𝙰𝚍𝚖𝚒𝚗 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:❒
-├◈  ❍  .ban @user
-├◈  ❍  .promote @user
-├◈  ❍  .demote @user
-├◈  ❍  .mute <minutes>
-├◈  ❍  .unmute
-├◈  ❍  .delete or .del
-├◈  ❍  .kick @user
-├◈  ❍  .warnings @user
-├◈  ❍  .warn @user
-├◈  ❍ .antilink
-├◈  ❍  .antibadword
-├◈  ❍ .clear
-├◈  ❍  .tag <message>
-├◈  ❍  .tagall
-├◈  ❍  .tagnotadmin
-├◈  ❍  .hidetag <message>
-├◈  ❍  .chatbot
-├◈  ❍ .resetlink
-├◈  ❍ .antitag <on/off>
-├◈  ❍  .welcome <on/off>
-├◈  ❍  .goodbye <on/off>
-├◈  ❍ .setgdesc <description>
-├◈  ❍  .setgname <new name>
-├◈  ❍  .setgpp (reply to image)
+├◈  🔹  .ban @user
+├◈  🔹  .promote @user
+├◈  🔹  .demote @user
+├◈  🔹  .mute <minutes>
+├◈  🔹  .unmute
+├◈  🔹  .delete or .del
+├◈  🔹  .kick @user
+├◈  🔹  .warnings @user
+├◈  🔹  .warn @user
+├◈  🔹 .antilink
+├◈  🔹  .antibadword
+├◈  🔹 .clear
+├◈  🔹  .tag <message>
+├◈  🔹  .tagall
+├◈  🔹  .tagnotadmin
+├◈  🔹  .hidetag <message>
+├◈  🔹  .chatbot
+├◈  🔹 .resetlink
+├◈  🔹 .antitag <on/off>
+├◈  🔹  .welcome <on/off>
+├◈  🔹  .goodbye <on/off>
+├◈  🔹 .setgdesc <description>
+├◈  🔹  .setgname <new name>
+├◈  🔹  .setgpp (reply to image)
 ┕──────────────────❒
 
 ╭────❒ 𝐎𝐰𝐧𝐞𝐫 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍  .mode <public/private>
-├◈  ❍  .clearsession
-├◈  ❍  .antidelete
-├◈  ❍  .cleartmp
-├◈  ❍  .update
-├◈  ❍  .settings
-├◈  ❍  .setpp <reply to image>
-├◈  ❍  .autoreact <on/off>
-├◈  ❍  .autostatus <on/off>
-├◈  ❍  .autostatus react <on/off>
-├◈  ❍  .autotyping <on/off>
-├◈  ❍  .autoread <on/off>
-├◈  ❍  .anticall <on/off>
-├◈  ❍  .pmblocker <on/off/status>
-├◈  ❍  .pmblocker setmsg <text>
-├◈  ❍  .setmention <reply to msg>
-├◈  ❍  .mention <on/off>
+├◈  🔹  .mode <public/private>
+├◈  🔹  .clearsession
+├◈  🔹  .antidelete
+├◈  🔹  .cleartmp
+├◈  🔹  .update
+├◈  🔹  .settings
+├◈  🔹 .setpp <reply to image>
+├◈  🔹  .autoreact <on/off>
+├◈  🔹  .autostatus <on/off>
+├◈  🔹  .autostatus react <on/off>
+├◈  🔹  .autotyping <on/off>
+├◈  🔹  .autoread <on/off>
+├◈  🔹  .anticall <on/off>
+├◈  🔹  .pmblocker <on/off/status>
+├◈  🔹  .pmblocker setmsg <text>
+├◈  🔹  .setmention <reply to msg>
+├◈  🔹  .mention <on/off>
 ┕──────────────────❒
 
 ╭────❒ 𝐈𝐦𝐚𝐠𝐞 /𝐒𝐭𝐢𝐜𝐤𝐞𝐫 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍  .blur <image>
-├◈  ❍  .simage <reply to sticker>
-├◈  ❍  .sticker <reply to image>
-├◈  ❍  .removebg
-├◈  ❍  .remini
-├◈  ❍  .crop <reply to image>
-├◈  ❍  .tgsticker <Link>
-├◈  ❍  .meme
-├◈  ❍  .take <packname> 
-├◈  ❍  .emojimix <emj1>+<emj2>
-├◈  ❍  .igs <insta link>
-├◈  ❍  .igsc <insta link>
+├◈  🔹  .blur <image>
+├◈  🔹  .simage <reply to sticker>
+├◈  🔹  .sticker <reply to image>
+├◈  🔹  .removebg
+├◈  🔹  .remini
+├◈  🔹  .crop <reply to image>
+├◈  🔹  .tgsticker <Link>
+├◈  🔹  .meme
+├◈  🔹  .take <packname> 
+├◈  🔹  .emojimix <emj1>+<emj2>
+├◈  🔹  .igs <insta link>
+├◈  🔹  .igsc <insta link>
 ┕──────────────────❒ 
 
 ╭────❒ 𝐏𝐢𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍  .pies <country>
-├◈  ❍ .china 
-├◈  ❍ .indonesia 
-├◈  ❍  .japan 
-├◈  ❍ .korea 
-├◈  ❍  .hijab
+├◈  🔹  .pies <country>
+├◈  🔹 .china 
+├◈  🔹 .indonesia 
+├◈  🔹  .japan 
+├◈  🔹 .korea 
+├◈  🔹  .hijab
 ┕──────────────────❒
 
 ╭────❒ 𝐆𝐚𝐦𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍ .tictactoe @user
-├◈  ❍  .hangman
-├◈  ❍  .guess <letter>
-├◈  ❍  .trivia
-├◈  ❍  .answer <answer>
-├◈  ❍  .truth
-├◈  ❍  .dare
+├◈  🔹 .tictactoe @user
+├◈  🔹  .hangman
+├◈  🔹  .guess <letter>
+├◈  🔹  .trivia
+├◈  🔹  .answer <answer>
+├◈  🔹  .truth
+├◈  🔹  .dare
 ┕──────────────────❒
 
 ╭────❒ 𝐀𝐥 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍  .gpt <question>
-├◈  ❍ .gemini <question>
-├◈  ❍ .imagine <prompt>
-├◈  ❍ .flux <prompt>
-├◈  ❍.sora <prompt>
+├◈  🔹  .gpt <question>
+├◈  🔹 .gemini <question>
+├◈  🔹 .imagine <prompt>
+├◈  🔹 .flux <prompt>
+├◈  🔹.sora <prompt>
 ┕──────────────────❒
 
 ╭────❒ 𝐅𝐮𝐧 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  ❍  .compliment @user
-├◈  ❍  .insult @user
-├◈  ❍ .flirt 
-├◈  ❍ .shayari
-├◈  ❍  .goodnight
-├◈  ❍  .roseday
-├◈  ❍ .character @user
-├◈  ❍ .wasted @user
-├◈  ❍ .ship @user
-├◈  ❍ .simp @user
-├◈  ❍  .stupid @user [text]
+├◈  🔹  .compliment @user
+├◈  🔹  .insult @user
+├◈  🔹.flirt 
+├◈  🔹 .shayari
+├◈  🔹  .goodnight
+├◈  🔹  .roseday
+├◈  🔹 .character @user
+├◈  🔹 .wasted @user
+├◈  🔹 .ship @user
+├◈  🔹 .simp @user
+├◈  🔹  .stupid @user [text]
 ┕──────────────────❒
 
 ╭────❒ 𝐓𝐞𝐱𝐭𝐦𝐚𝐤𝐞𝐫:❒
-├◈  ❍  .metallic <text>
-├◈  ❍  .ice <text>
-├◈  ❍  .snow <text>
-├◈  ❍  .impressive <text>
-├◈  ❍  .matrix <text>
-├◈  ❍  .light <text>
+├◈  🔹  .metallic <text>
+├◈  🔹  .ice <text>
+├◈  🔹  .snow <text>
+├◈  🔹  .impressive <text>
+├◈  🔹  .matrix <text>
+├◈    .light <text>
 ├◈  ❍  .neon <text>
 ├◈  ❍  .devil <text>
 ├◈  ❍  .purple <text>
