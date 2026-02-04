@@ -1,4 +1,4 @@
-const isAdmin = require('../lib/isAdmin');
+       const isAdmin = require('../lib/isAdmin');
 
 async function tagAllCommand(sock, chatId, senderId, message) {
     try {
@@ -24,25 +24,23 @@ async function tagAllCommand(sock, chatId, senderId, message) {
         let count = 1;
 
         let messageText = `
-*▢ GROUP :* ${groupMetadata.subject}
-*▢ MEMBERS :* ${members.length}
-*▢ MESSAGE :* 💥 *ATTENTION EVERYONE!* 💥
+▢ GROUP : ${groupMetadata.subject}
+▢ MEMBERS : ${members.length}
+▢ MESSAGE : 💥 ATTENTION EVERYONE! 💥
 
 ╭┈─「 ɦเ αℓℓ ƒɾเεɳ∂ร 🥰 」┈❍
 `;
 
         for (let m of members) {
             let emoji = emojis[(count - 1) % emojis.length];
-
-            // 🔥 এখানে শুধু circle এর জায়গায় ✨
-            messageText += `*✨ ${emoji} @${m.id.split('@')[0]}*\n`;
+            messageText += `${emoji} @${m.id.split('@')[0]}\n`;
             count++;
         }
 
         messageText += `╰────────────❍
 
-💬 *Sent with Power by 𓆩Xtylish-Shahin𓆪 🖤*
-🌸 *Stay Active — Stay Stylish!* ✨
+💬 Sent with Power by 𓆩Xtylish-Shahin𓆪 🖤
+🌸 Stay Active — Stay Stylish! ✨
 `;
 
         await sock.sendMessage(
@@ -63,4 +61,4 @@ async function tagAllCommand(sock, chatId, senderId, message) {
     }
 }
 
-module.exports = tagAllCommand;        
+module.exports = tagAllCommand;
