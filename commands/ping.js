@@ -29,7 +29,7 @@ async function pingCommand(sock, chatId, message) {
         const uptimeFormatted = formatTime(uptimeInSeconds);
 
         const botInfo = `
-╭─❏ *💖 𝐏𝐈𝐍𝐆 𝐓𝐄𝐒𝐓💗* ❏─╮
+╭─❏ *💖 🌙⧫𝐏ᮀ𝐎ᮁ𝐍ᮀ𝐆ᮁ  💗* ❏─╮
 │ ⚡  Response     : ${ping} ms
 │ ⏱️ Status:   : ${uptimeFormatted}
 │ 💎 Version  : v${settings.version}
