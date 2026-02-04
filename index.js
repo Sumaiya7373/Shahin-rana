@@ -1,6 +1,6 @@
 /**
  * 𝗦𝗵𝗮𝗵𝗶𝗻 𝗥𝗮𝗻𝗮 - A WhatsApp Bot
- * Copyright (c) 2024 Professor
+ * Copyright (c) 2024 Shahin Rana
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the MIT License.
