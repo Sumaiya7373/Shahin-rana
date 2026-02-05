@@ -24,9 +24,9 @@ async function tagAllCommand(sock, chatId, senderId, message) {
         let count = 1;
 
         let messageText = `
-▢ GROUP : ${groupMetadata.subject}
-▢ MEMBERS : ${members.length}
-▢ MESSAGE : 💥 ATTENTION EVERYONE! 💥
+▢ 🇬‌𝐑𝐎𝐔𝐏 : ${groupMetadata.subject}
+▢ 🇲‌𝐄𝐌𝐁𝐄𝐑𝐒 : ${members.length}
+▢ 🇲‌𝐄𝐒𝐒𝐀𝐆𝐄 :💗🇦‌𝐓𝐓𝐄𝐍𝐓𝐈𝐎𝐍 🇪‌𝐕𝐄𝐑𝐘𝐎𝐍𝐄!💗 
 
 ╭┈─「 ɦเ αℓℓ ƒɾเεɳ∂ร 🥰 」┈❍
 `;
@@ -39,8 +39,8 @@ async function tagAllCommand(sock, chatId, senderId, message) {
 
         messageText += `╰────────────❍
 
-💬 Sent with Power by 𓆩Xtylish-Shahin𓆪 🖤
-🌸 Stay Active — Stay Stylish! ✨
+💬 Sent with Love by 𓆩Xtylish-Shahin𓆪 🖤
+💗 Stay Active — Stay Stylish! ✨
 `;
 
         await sock.sendMessage(
