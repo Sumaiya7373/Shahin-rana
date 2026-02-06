@@ -1,17 +1,8 @@
-       const isAdmin = require('../lib/isAdmin');
+const isAdmin = require('../lib/isAdmin');
 
 async function tagAllCommand(sock, chatId, senderId, message) {
     try {
-        const { isSenderAdmin, isBotAdmin } = await isAdmin(sock, chatId, senderId);
-
-        if (!isBotAdmin) {
-            await sock.sendMessage(chatId, { 
-                text: 'Please make the bot an admin first.', 
-                quoted: message 
-            });
-            return;
-        }
-
+        // Group metadata
         const groupMetadata = await sock.groupMetadata(chatId);
         const members = groupMetadata.participants;
 
@@ -26,7 +17,7 @@ async function tagAllCommand(sock, chatId, senderId, message) {
         let messageText = `
 ▢ 🇬‌𝐑𝐎𝐔𝐏 : ${groupMetadata.subject}
 ▢ 🇲‌𝐄𝐌𝐁𝐄𝐑𝐒 : ${members.length}
-▢ 🇲‌𝐄𝐒𝐒𝐀𝐆𝐄 :💗🇦‌𝐓𝐓𝐄𝐍𝐓𝐈𝐎𝐍 🇪‌𝐕𝐄𝐑𝐘𝐎𝐍𝐄!💗 
+▢ 🇲‌𝐄𝐒𝐒𝐀𝐆𝐄 : 💗🇦‌𝐓𝐓𝐄𝐍𝐓𝐈𝐎𝐍 🇪‌𝐕𝐄𝐑𝐘𝐎𝐍𝐄!💗
 
 ╭┈─「 ɦเ αℓℓ ƒɾเεɳ∂ร 🥰 」┈❍
 `;
@@ -43,14 +34,10 @@ async function tagAllCommand(sock, chatId, senderId, message) {
 💗 Stay Active — Stay Stylish! ✨
 `;
 
-        await sock.sendMessage(
-            chatId,
-            {
-                text: messageText,
-                mentions: members.map(a => a.id)
-            },
-            { quoted: message }
-        );
+        await sock.sendMessage(chatId, {
+            text: messageText,
+            mentions: members.map(a => a.id)
+        }, { quoted: message });
 
     } catch (error) {
         console.error("❌ TagAll error:", error);
