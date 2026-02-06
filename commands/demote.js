@@ -1,4 +1,4 @@
- // ================= MANUAL DEMOTE COMMAND =================
+// ================= MANUAL DEMOTE COMMAND =================
 async function demoteCommand(sock, chatId, mentionedJids, message) {
     let userToDemote = [];
 
@@ -31,27 +31,15 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
 
         const ownerTag = ownerJid ? `@${ownerJid.split('@')[0]}` : 'Not Found';
 
-        const now = new Date();
-        const date = now.toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        });
-        const time = now.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        });
-
         const demoteMessage =
 `╭─〔 *⚡ Admin Event* 〕
 ├─ ${adminTag} has demoted ${usernames.join(', ')}
 ├─ Group: ${groupName}
 ├─ 👑 𝐆𝐫𝐨𝐮𝐩 𝐎𝐰𝐧𝐞𝐫 : ${ownerTag}
 │
-├─ ✦ *Demotion Schedule* ✦
-│   ├─ 🗓️ 𝐃𝐚𝐭𝐞 » ${date}
-│   └─ ⌛ 𝐓𝐢𝐦𝐞 » ${time}
+├─ 😢 *একটি বার্তা*
+│   └─ দায়িত্ব চলে গেলেও আপনি আমাদের গ্রুপের একজন সম্মানিত সদস্য।
+│      ভুল থেকে শিক্ষা নিয়ে আবারও ঘুরে দাঁড়াবেন 🤍
 │
 ╰─➤ Powered by ~⎯͢⎯⃝🩷➪‎‎‎Shahin Rana♡●➪`;
 
@@ -97,27 +85,15 @@ async function handleDemotionEvent(sock, groupId, participants, author) {
         const ownerTag = ownerJid ? `@${ownerJid.split('@')[0]}` : 'Not Found';
         if (ownerJid) mentionList.push(ownerJid);
 
-        const now = new Date();
-        const date = now.toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        });
-        const time = now.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        });
-
         const demoteMessage =
 `╭─〔 *⚡ Admin Event* 〕
 ├─ ${adminTag} has demoted ${demotedUsers.join(', ')}
 ├─ Group: ${groupName}
 ├─ 👑 𝐆𝐫𝐨𝐮𝐩 𝐎𝐰𝐧𝐞𝐫 : ${ownerTag}
 │
-├─ ✦ *Demotion Schedule* ✦
-│   ├─ 🗓️ 𝐃𝐚𝐭𝐞 » ${date}
-│   └─ ⌛ 𝐓𝐢𝐦𝐞 » ${time}
+├─ 😢 *একটি বার্তা*
+│   └─ দায়িত্ব চলে গেলেও আপনি আমাদের গ্রুপের একজন সম্মানিত সদস্য।
+│      ভুল থেকে শিক্ষা নিয়ে আবারও ঘুরে দাঁড়াবেন 🤍
 │
 ╰─➤ Powered by ~⎯͢⎯⃝🩷➪‎‎‎Shahin Rana♡●➪`;
 
