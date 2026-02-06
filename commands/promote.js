@@ -33,27 +33,15 @@ async function promoteCommand(sock, chatId, mentionedJids, message) {
 
         const ownerTag = ownerJid ? `@${ownerJid.split('@')[0]}` : 'Not Found';
 
-        const now = new Date();
-        const date = now.toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        });
-        const time = now.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        });
-
         const promotionMessage =
 `╭─〔 *🎉 Admin Event* 〕
 ├─ ${adminTag} has promoted ${usernames.join(', ')}
 ├─ Group: ${groupName}
 ├─ 👑 𝐆𝐫𝐨𝐮𝐩 𝐎𝐰𝐧𝐞𝐫 : ${ownerTag}
 │
-├─ ✦ *Promotion Schedule* ✦
-│   ├─ 🗓️ 𝐃𝐚𝐭𝐞 » ${date}
-│   └─ ⌛ 𝐓𝐢𝐦𝐞 » ${time}
+├─ 💖 *একটি বিশেষ বার্তা*
+│   └─ আজ থেকে তুমি আমাদের গ্রুপের দায়িত্বশীল একজন অভিভাবক।
+│      সততা ও সম্মানের সাথে দায়িত্ব পালন করবে 💫
 │
 ╰─➤ Powered by ~⎯͢⎯⃝🩷➪‎‎‎Shahin Rana♡●➪`;
 
@@ -99,27 +87,15 @@ async function handlePromotionEvent(sock, groupId, participants, author) {
         const ownerTag = ownerJid ? `@${ownerJid.split('@')[0]}` : 'Not Found';
         if (ownerJid) mentionList.push(ownerJid);
 
-        const now = new Date();
-        const date = now.toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        });
-        const time = now.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        });
-
         const promotionMessage =
 `╭─〔 *🎉 Admin Event* 〕
 ├─ ${adminTag} has promoted ${promotedUsers.join(', ')}
 ├─ Group: ${groupName}
 ├─ 👑 𝐆𝐫𝐨𝐮𝐩 𝐎𝐰𝐧𝐞𝐫 : ${ownerTag}
 │
-├─ ✦ *Promotion Schedule* ✦
-│   ├─ 🗓️ 𝐃𝐚𝐭𝐞 » ${date}
-│   └─ ⌛ 𝐓𝐢𝐦𝐞 » ${time}
+├─ 💖 *একটি বিশেষ বার্তা*
+│   └─ আজ থেকে তুমি আমাদের গ্রুপের দায়িত্বশীল একজন অভিভাবক।
+│      সততা ও সম্মানের সাথে দায়িত্ব পালন করবে 💫
 │
 ╰─➤ Powered by ~⎯͢⎯⃝🩷➪‎‎‎Shahin Rana♡●➪`;
 
