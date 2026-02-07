@@ -148,7 +148,7 @@ async function helpCommand(sock, chatId, message) {
 ├◈  🔹 .light <text>
 ├◈  🔹  .neon <text>
 ├◈  🔹  .devil <text>
-├◈  🔹  .purple <tehttps://chat.whatsapp.com/F5Wnw7pgW576YqhXaXylOW?mode=gi_txt>
+├◈  🔹  .purple <text>
 ├◈  🔹  .thunder <text>
 ├◈  🔹  .leaves <text>
 ├◈  🔹  .1917 <text>
