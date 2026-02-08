@@ -160,14 +160,14 @@ async function helpCommand(sock, chatId, message) {
 ┕──────────────────❒
 
 ╭────❒ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫:❒
-├◈  🔹 .play <song_name>
-├◈  🔹 .song <song_name>
-├◈  🔹  .spotify <query>
-├◈  🔹 .instagram <link>
-├◈  🔹 .facebook <link>
-├◈  🔹 .tiktok <link>
-├◈  🔹 .video <song name>
-├◈  🔹  . <Link>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇵‌lay <song_name>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇸‌ong <song_name>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇸‌potify <query>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇮‌nstagram <link>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇫‌acebook <link>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇹‌iktok <link>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇻‌ideo <song name>
+├◈  *⎯⃝🩷➪‎‎‎*  . <Link>
 ┕──────────────────❒
 
 ╭────❒ 𝐌𝐢𝐬𝐜:❒
