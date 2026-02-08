@@ -64,23 +64,23 @@ async function helpCommand(sock, chatId, message) {
 ┕──────────────────❒
 
 ╭────❒ 𝐎𝐰𝐧𝐞𝐫 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
-├◈  🔹  .mode <public/private>
-├◈  🔹  .clearsession
-├◈  🔹  .antidelete
-├◈  🔹  .cleartmp
-├◈  🔹  .update
-├◈  🔹  .settings
-├◈  🔹 .setpp <reply to image>
-├◈  🔹  .autoreact <on/off>
-├◈  🔹  .autostatus <on/off>
-├◈  🔹  .autostatus react <on/off>
-├◈  🔹  .autotyping <on/off>
-├◈  🔹  .autoread <on/off>
-├◈  🔹  .anticall <on/off>
-├◈  🔹  .pmblocker <on/off/status>
-├◈  🔹  .pmblocker setmsg <text>
-├◈  🔹  .setmention <reply to msg>
-├◈  🔹  .mention <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇲‌ode <public/private>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇨‌learsession
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌ntidelete
+├◈  *⎯⃝🩷➪‎‎‎*  .🇨‌leartmp
+├◈  *⎯⃝🩷➪‎‎‎*  .🇺‌pdate
+├◈  *⎯⃝🩷➪‎‎‎*  .🇸‌ettings
+├◈  *⎯⃝🩷➪‎‎‎*  .🇸‌etpp <reply to image>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌utoreact <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌utostatus <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌utostatus react <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌utotyping <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌utoread <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇦‌nticall <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇵‌mblocker <on/off/status>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇵‌mblocker setmsg <text>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇸‌etmention <reply to msg>
+├◈  *⎯⃝🩷➪‎‎‎*  .🇲‌ention <on/off>
 ┕──────────────────❒
 
 ╭────❒ 𝐈𝐦𝐚𝐠𝐞 /𝐒𝐭𝐢𝐜𝐤𝐞𝐫 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
