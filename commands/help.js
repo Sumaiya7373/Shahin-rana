@@ -37,30 +37,30 @@ async function helpCommand(sock, chatId, message) {
 ┕──────────────────❒
 
 ╭────❒ 𝙰𝚍𝚖𝚒𝚗 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:❒
-├◈  🔹  .ban @user
-├◈  🔹  .promote @user
-├◈  🔹  .demote @user
-├◈  🔹  .mute <minutes>
-├◈  🔹  .unmute
-├◈  🔹  .delete or .del
-├◈  🔹  .kick @user
-├◈  🔹  .warnings @user
-├◈  🔹  .warn @user
-├◈  🔹 .antilink
-├◈  🔹  .antibadword
-├◈  🔹 .clear
-├◈  🔹  .tag <message>
-├◈  🔹  .tagall
-├◈  🔹  .tagnotadmin
-├◈  🔹  .hidetag <message>
-├◈  🔹  .chatbot
-├◈  🔹 .resetlink
-├◈  🔹 .antitag <on/off>
-├◈  🔹  .welcome <on/off>
-├◈  🔹  .goodbye <on/off>
-├◈  🔹 .setgdesc <description>
-├◈  🔹  .setgname <new name>
-├◈  🔹  .setgpp (reply to image)
+├◈  *⎯⃝🩷➪‎‎‎*  .ban @user
+├◈  *⎯⃝🩷➪‎‎‎*  .promote @user
+├◈  *⎯⃝🩷➪‎‎‎*  .demote @user
+├◈  *⎯⃝🩷➪‎‎‎*  .mute <minutes>
+├◈  *⎯⃝🩷➪‎‎‎*  .unmute
+├◈  *⎯⃝🩷➪‎‎‎*  .delete or .del
+├◈  *⎯⃝🩷➪‎‎‎*  .kick @user
+├◈  *⎯⃝🩷➪‎‎‎*  .warnings @user
+├◈  *⎯⃝🩷➪‎‎‎*  .warn @user
+├◈  *⎯⃝🩷➪‎‎‎* .antilink
+├◈  *⎯⃝🩷➪‎‎‎*  .antibadword
+├◈  *⎯⃝🩷➪‎‎‎* .clear
+├◈  *⎯⃝🩷➪‎‎‎*  .tag <message>
+├◈  *⎯⃝🩷➪‎‎‎*  .tagall
+├◈  *⎯⃝🩷➪‎‎‎*  .tagnotadmin
+├◈  *⎯⃝🩷➪‎‎‎*  .hidetag <message>
+├◈  *⎯⃝🩷➪‎‎‎*  .chatbot
+├◈  *⎯⃝🩷➪‎‎‎* .resetlink
+├◈  *⎯⃝🩷➪‎‎‎* .antitag <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .welcome <on/off>
+├◈  *⎯⃝🩷➪‎‎‎*  .goodbye <on/off>
+├◈  *⎯⃝🩷➪‎‎‎* .setgdesc <description>
+├◈  *⎯⃝🩷➪‎‎‎*  .setgname <new name>
+├◈  *⎯⃝🩷➪‎‎‎*  .setgpp (reply to image)
 ┕──────────────────❒
 
 ╭────❒ 𝐎𝐰𝐧𝐞𝐫 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬:❒
