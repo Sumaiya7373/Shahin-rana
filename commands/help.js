@@ -4,7 +4,7 @@ const path = require('path');
 
 async function helpCommand(sock, chatId, message) {
     const helpMessage = `
-╭─「 💗*~_𝐒𝐡𝐚𝐡𝐢𝐧_ღ꙰𝐑𝐚𝐧𝐚_~*💗 」
+╭┈─「 *~_𝐒𝐡𝐚𝐡𝐢𝐧_ღ꙰𝐑𝐚𝐧𝐚_~*」┈❍
 ├◈ * 🔹${settings.botName || ' 𝐒𝐡𝐚𝐡𝐢𝐧 𝐑𝐚𝐧𝐚'}*  
 ├◈   🔹*~_𝐕𝐞𝐫𝐬𝐢𝐨𝐧_~*: *${settings.version || '3.0.0'}*
 ├◈   🔹 *~_𝐁𝐘_~* ${settings.botOwner || 'Mr Shahin Rana'}
