@@ -70,7 +70,7 @@ async function handleChatbotCommand(sock, chatId, message, match) {
     data.chatbot[chatId] = true;
     saveUserGroupData(data);
     return sock.sendMessage(chatId, {
-      text: '✅ Chatbot enabled',
+      text: '🪀 Chatbot enabled',
       quoted: message
     });
   }
