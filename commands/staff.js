@@ -19,7 +19,7 @@ async function staffCommand(sock, chatId, msg) {
         const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || chatId.split('-')[0] + '@s.whatsapp.net';
 
         // Emoji array (cycle through for fun)
-        const emojis = ['🪻','👀','🍿','🐋','🧃','🎀','🍓','🎐','🍦','✨'];
+        const emojis = ['🪀','👀','🍿','🐋','🧃','🎀','🍓','🎐','🍦','✨'];
         
         // Fancy header with dynamic group name
         const header = `*▢ GROUP : ${groupMetadata.subject}*\n*▢ ADMINS : ${groupAdmins.length}*\n*▢ MESSAGE : ATTENTION ADMINS*`;
